@@ -1,0 +1,33 @@
+﻿🕧 - Working
+✓ - Done
+❌ - Not Started
+
+**UPDATE 0.1 TO-DO LIST**
+
+1) 4 Total Weapons, one for each class
+
+a. Melee - ✓
+b. Ranged - ✓ 
+c. Magic - ✓
+d. Summoner - ✓
+
+2) Accessories 
+
+a. Melee - ✓
+b. Ranged - ✓
+c. Magic - ✓
+d. Summoner - ✓
+
+3) Ore and Ore-Based Items
+
+a. Ore Design - ✓
+b. Ore Bar Design - ✓
+c. Ore Implementation - ✓
+d. Ore Armor Design - ✓
+e. Ore Armor Implementation - ✓
+
+4) Bosses and....
+
+c. Boss Summon Item
+d. Boss
+e. Boss Lootbag

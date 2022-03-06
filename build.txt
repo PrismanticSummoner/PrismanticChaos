@@ -1,0 +1,5 @@
+displayName = Prismantic Chaos
+author = EHance
+version = 0.3
+homepage = https://discord.gg/Ta88Eapp6k
+includePDB = true
