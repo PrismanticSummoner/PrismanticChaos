@@ -3,41 +3,41 @@ using Terraria;
 using Prism3.Items;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Prism3.Items.AstrallicDamageClass;
 
 namespace Prism3.Armor
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class AstraliteBoots : ModItem
+	public class FrostniteBoots : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
 			base.SetStaticDefaults();
-			DisplayName.SetDefault("Astralite Leggings");
-			Tooltip.SetDefault("Armor forged from the purest of Astralite"
-				+ "\nImmunity to 'On Fire, Bleeding, and Poisoned!'");
+			DisplayName.SetDefault("Frostnite Boots");
+			Tooltip.SetDefault("Frozen wood armor...I mean I guess its a start."
+				+ "\nSlightly increases astrallic damage");
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 18;
+			item.width = 22;
 			item.height = 18;
 			item.value = 10000;
-			item.rare = ItemRarityID.LightPurple;
-			item.defense = 5;
+			item.rare = ItemRarityID.Cyan;
+			item.defense = 3;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.buffImmune[BuffID.OnFire] = true;
-			player.buffImmune[BuffID.Bleeding] = true;
-			player.buffImmune[BuffID.Poisoned] = true;
+			var modPlayer = AstrallicDamagePlayer.ModPlayer(player);
+			modPlayer.astrallicDamageMult += 0.1f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<AstraliteBar>(), 15);
-			recipe.AddTile(TileID.DemonAltar);
+			recipe.AddIngredient(ModContent.ItemType<Frostnite>(), 15);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

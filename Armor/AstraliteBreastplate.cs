@@ -13,9 +13,8 @@ namespace Prism3.Armor
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Astralite Breastplate");
-			Tooltip.SetDefault("This is a modded body armor."
-				+ "\nImmunity to 'Weakness, Frozen, and Mana Sickness!'"
-				+ "\nIncrease all damage");
+			Tooltip.SetDefault("Armor forged from the purest of Astralite"
+				+ "\nImmunity to 'Weakness, Frozen, and Cursed Flames!'");
 		}
 
 		public override void SetDefaults()
@@ -24,22 +23,21 @@ namespace Prism3.Armor
 			item.height = 18;
 			item.value = 10000;
 			item.rare = ItemRarityID.LightPurple;
-			item.defense = 30;
+			item.defense = 20;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
 			player.buffImmune[BuffID.Weak] = true;
 			player.buffImmune[BuffID.Frozen] = true;
-			player.buffImmune[BuffID.ManaSickness] = true;
-			player.allDamage += 0.5f;
+			player.buffImmune[BuffID.CursedInferno] = true;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<AstraliteBar>(), 23);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
